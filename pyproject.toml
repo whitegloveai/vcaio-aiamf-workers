@@ -1,0 +1,41 @@
+[project]
+name = "vcaio-agno"
+version = "0.1.0"
+description = "Virtual Chief AI Officer - An AI-powered solution architect and strategy consultant"
+authors = [
+    {name = "Tobalo Torres-Valderas", email = "tobalo@whitegloveai.com"},
+]
+license = "Proprietary"
+readme = "README.md"
+requires-python = ">=3.8"
+
+[project.urls]
+Homepage = "https://whitegloveai.com"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[project.dependencies]
+python-dotenv = "^1.0.0"
+pyyaml = "^6.0.1"
+loguru = "^0.7.2"
+
+[tool.ruff]
+line-length = 88
+target-version = "py38"
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "D",  # pydocstyle
+]

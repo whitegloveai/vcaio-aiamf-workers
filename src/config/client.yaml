@@ -1,0 +1,122 @@
+discovery_context:
+  business:
+    key_stakeholders:
+    - CEO, CTO, CFO
+    pain_points:
+    - Mo Money Mo Problems
+    strategic_goals:
+    - "Survive and thrive"
+    success_metrics:
+    - CAGR, ROI, LTV, ROA
+  compliance:
+    data_privacy: ["GDPR", "HIPAA", "ITAR", "ISO/IEC 27001"]
+    requirements: ["zero-trust, multi-factor authentication"]
+    security_controls: ["RBAC", "ABAC"]
+  data_sources:
+    external:
+      - name: "AWS S3"
+        description: "Customer data lake storage"
+        regions: ["us-east-1", "eu-west-1"]
+        data_types: ["parquet", "csv", "json"]
+        size_estimate: "50TB"
+      - name: "Azure Blob Storage"
+        description: "Legacy system backups and archives"
+        regions: ["eastus2"]
+        data_types: ["binary", "logs"]
+        size_estimate: "20TB"
+      - name: "Supabase"
+        description: "Customer facing application database"
+        regions: ["us-west-1"]
+        data_types: ["postgresql"]
+        size_estimate: "500GB"
+    internal:
+      - name: "Notion"
+        description: "Company documentation and knowledge base"
+        workspaces: ["Engineering", "Product", "Sales"]
+        access_level: "Team"
+      - name: "Slack"
+        description: "Internal communication and automation"
+        channels: ["#engineering", "#customer-support", "#data-science"]
+        retention_policy: "90 days"
+      - name: "Google Drive"
+        description: "Shared documents and analytics reports"
+        shared_drives: ["Executive", "Engineering", "Customer Success"]
+        size_estimate: "2TB"
+  it_estate:
+    applications:
+      - name: "Customer Portal"
+        type: "Web Application"
+        tech_stack: ["React", "Node.js", "PostgreSQL"]
+        hosting: "AWS ECS"
+        status: "Production"
+      - name: "Mobile App"
+        type: "Native Mobile"
+        tech_stack: ["React Native", "Firebase"]
+        platforms: ["iOS", "Android"]
+        status: "Beta"
+      - name: "Admin Dashboard"
+        type: "Web Application"
+        tech_stack: ["Vue.js", "Python FastAPI"]
+        hosting: "Azure App Service"
+        status: "Production"
+    cloud_services:
+      - name: "AWS"
+        services:
+          - "ECS"
+          - "RDS"
+          - "Lambda"
+          - "API Gateway"
+        regions: ["us-east-1", "eu-west-1"]
+      - name: "Azure"
+        services:
+          - "App Service"
+          - "Azure Functions"
+          - "CosmosDB"
+        regions: ["eastus2"]
+      - name: "GCP"
+        services:
+          - "BigQuery"
+          - "Cloud Storage"
+        regions: ["us-central1"]
+    databases:
+      - name: "Customer Data"
+        type: "PostgreSQL"
+        version: "14.5"
+        hosting: "AWS RDS"
+        size: "2TB"
+        backup_strategy: "Daily snapshots"
+      - name: "Analytics"
+        type: "BigQuery"
+        datasets: ["user_events", "metrics", "reports"]
+        size: "10TB"
+      - name: "Cache Layer"
+        type: "Redis"
+        version: "6.2"
+        hosting: "AWS ElastiCache"
+        purpose: "Session management and API caching"
+    integration_points:
+      - name: "Payment Gateway"
+        type: "REST API"
+        provider: "Stripe"
+        endpoints: ["charges", "subscriptions", "refunds"]
+      - name: "Email Service"
+        type: "SMTP/API"
+        provider: "SendGrid"
+        volume: "100k emails/month"
+      - name: "Authentication"
+        type: "OAuth2/OIDC"
+        provider: "Auth0"
+        integrations: ["Google", "Microsoft", "GitHub"]
+documents:
+  input_directory: ./data/input
+  output_directory: ./data/output
+  supported_formats:
+  - .pdf
+  - .docx
+  - .txt
+  - .md
+organization:
+  industry: IT
+  location: Frisco
+  name: WhitegloveAI
+  size: Small
