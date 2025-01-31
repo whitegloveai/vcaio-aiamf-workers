@@ -62,7 +62,8 @@ cp .env.example .env # Input your OpenAI API key (we'll probably want to do loca
      - Data sources
      - IT estate information
      - Current AI/ML initiatives
-Then validate your configuration with `vcaio validate-config`
+
+Validate your configuration with `vcaio validate-config`
 
 2. Place any supporting documents in `./data/input/`
 
