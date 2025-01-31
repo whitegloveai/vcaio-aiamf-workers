@@ -11,7 +11,6 @@ BANNER ="""
 ╚════════════════════════════════════════════╝
 
 Author: Tobalo Torres-Valderas
-Role: Chief AI Solutions Architect
 
 System Status:
 ------------

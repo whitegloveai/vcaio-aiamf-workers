@@ -2,6 +2,8 @@
 
 An AI-powered solution architect and strategy consultant that helps organizations develop their AI transformation roadmap.
 
+**TODO: instructor / trainer agent, engineer agent, analyst agent, project manager agent**
+
 ## Architecture
 
 ```mermaid
