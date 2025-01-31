@@ -61,14 +61,15 @@ cp .env.example .env # Input your OpenAI API key (we'll probably want to do loca
      - Compliance requirements
      - Data sources
      - IT estate information
-     - Current AI/ML initiatives
-
-Validate your configuration with `vcaio validate-config`
+     - Current AI/ML initiativesvcaio validate-config
 
 2. Place any supporting documents in `./data/input/`
 
 3. Usage:
 ```bash
+# Validate config
+vcaio validate-config
+
 # Run full workflow with default config
 vcaio run
 
