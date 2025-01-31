@@ -33,6 +33,14 @@ graph TD
 ```
 
 ## Setup
+**Clone Repo**:
+```bash
+git clone https://github.com/whitegloveai/vcaio-aiamf-workers.git
+```
+**Install UV** (if not already installed):
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
 
 1. Create a client configuration in `src/config/client.yaml` with:
    - Organization details

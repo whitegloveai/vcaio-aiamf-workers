@@ -4,7 +4,7 @@ from agno.tools.file import FileTools
 from src.agents.caio import caio
 from src.agents.architect import architect
 from src.client.context import ClientContext, initialize_context
-from src.config import vcaio_ascii
+from src.config import BANNER
 from src.services.logging import setup_logger
 
 import json
@@ -42,14 +42,18 @@ def run(context: ClientContext):
         logger.error(f"Error during discovery: {str(e)}")
         raise
 
-if __name__ == "__main__":
-    logger.info(vcaio_ascii)
+def main_execution_flow(config_path: str, verbose: bool = False, output_dir: str = "./data/output"):
+    """Main execution flow with enhanced parameter handling"""
     
+    logger.info(BANNER)
     load_dotenv()
     
-    # Initialize client context
-    context = initialize_context()
+    # Initialize context with provided parameters
+    context = initialize_context(config_path=config_path)
+    context.output_dir = Path(output_dir)
     
     # Run discovery phase
     session = run(context)
-    logger.info("View all the output files in the ./data/output directory to support your vCAIO engagement")
+    
+    logger.info(f"View all output files in {output_dir} to support your vCAIO engagement")
+    return session
