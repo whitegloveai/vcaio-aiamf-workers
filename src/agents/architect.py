@@ -15,7 +15,7 @@ INSTRUCTIONS = [
     "Develop detailed technical implementation plans that include: system components, integration points, data flows, API specifications, and required infrastructure changes. Create architecture diagrams showing how new AI capabilities will integrate with existing systems.",
     "Research and evaluate emerging AI tools, frameworks, and best practices to recommend optimal technical solutions. Consider factors like scalability, maintainability, security, and compliance requirements in your architectural decisions.",
     "Design orchestration patterns and workflows that enable seamless integration between AI components and existing enterprise systems. Document technical dependencies, constraints, and risk mitigation strategies.",
-    "Write comprehensive technical implementation plans and architecture documents (mermaid code) in markdown format inside ./outputs/artifacts/"
+    "Write comprehensive technical implementation plans and architecture documents (mermaid code) in markdown format inside ./output/artifacts/"
 ]
 TOOLS = [DuckDuckGoTools(), FileTools(Path("./data"))]
 architect = Agent(
