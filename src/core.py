@@ -39,7 +39,7 @@ def run(context: ClientContext):
     logger.info("Initializing discovery phase with complete client context")
     
     # Validate required configuration sections
-    required_sections = ["organization", "discovery_context", "data_sources", "it_estate", "compliance"]
+    required_sections = ["organization", "discovery_context"]
     missing_sections = [section for section in required_sections if section not in context.config]
     if missing_sections:
         raise ValueError(f"Missing required configuration sections: {', '.join(missing_sections)}")
@@ -47,32 +47,15 @@ def run(context: ClientContext):
     # Prepare comprehensive discovery input with all available context
     discovery_input = {
         "organization_context": context.config["organization"],
-        "discovery_context": {
-            "business": context.config["discovery_context"]["business"],
-            "compliance": context.config["discovery_context"]["compliance"],
-            "data_sources": context.config["discovery_context"]["data_sources"],
-            "it_estate": context.config["discovery_context"]["it_estate"]
-        },
-        "data_sources": {
-            "external": context.config["data_sources"]["external"],
-            "internal": context.config["data_sources"]["internal"]
-        },
-        "it_estate": {
-            "applications": context.config["it_estate"]["applications"],
-            "cloud_services": context.config["it_estate"]["cloud_services"],
-            "databases": context.config["it_estate"]["databases"],
-            "integration_points": context.config["it_estate"]["integration_points"]
-        },
-        "compliance": {
-            "data_privacy": context.config["discovery_context"]["compliance"]["data_privacy"],
-            "requirements": context.config["discovery_context"]["compliance"]["requirements"],
-            "security_controls": context.config["discovery_context"]["compliance"]["security_controls"]
-        }
+        "discovery_context": context.config["discovery_context"]["business"],
+        "compliance": context.config["discovery_context"]["compliance"],
+        "data_sources": context.config["discovery_context"]["data_sources"],
+        "it_estate": context.config["discovery_context"]["it_estate"]
     }
     
     # Log discovery context for debugging
     logger.debug(f"Starting discovery with context:\n" + 
-                f"Business Goals: {discovery_input['discovery_context']['business']['strategic_goals']}\n" +
+                f"Business Goals: {discovery_input['discovery_context']['strategic_goals']}\n" +
                 f"Compliance Requirements: {discovery_input['compliance']['data_privacy']}\n" +
                 f"Data Sources Count: {len(discovery_input['data_sources']['external']) + len(discovery_input['data_sources']['internal'])}")
     
@@ -84,7 +67,7 @@ def run(context: ClientContext):
             f"1. Business goals and pain points\n"
             f"2. Compliance and security requirements\n"
             f"3. Available data sources and IT infrastructure\n"
-            f"Context: {json.dumps(discovery_input, indent=2)}", stream=True
+            f"Context: {json.dumps(discovery_input, indent=2)}"
         )
     except KeyError as ke:
         logger.error(f"Configuration error: Missing key {str(ke)}")

@@ -1,7 +1,7 @@
 import click
 from importlib import metadata
 from .core import main_execution_flow
-from .client.context import ClientContext
+from .client.context import ClientContext, initialize_context
 
 @click.group(context_settings={"help_option_names": ["-h", "--help"]})
 @click.version_option(metadata.version("vcaio-agno"), "-v", "--version")
@@ -36,7 +36,8 @@ def run(config, verbose, output_dir):
 def validate_config(config):
     """Validate client configuration file"""
     try:
-        ClientContext(config_path=config)
+        from .client.context import initialize_context
+        initialize_context(config)
         click.secho("✅ Configuration is valid", fg="green")
     except Exception as e:
         click.secho(f"❌ Configuration error: {str(e)}", fg="red")

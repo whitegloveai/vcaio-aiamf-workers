@@ -95,32 +95,17 @@ class ClientContext:
             (self.data_dir / dir_name).mkdir(parents=True, exist_ok=True)
 
 def initialize_context(config_path: str = "./src/config/client.yaml") -> ClientContext:
-    import yaml
     # Load the YAML configuration
     with open(config_path, 'r') as file:
         client_config = yaml.safe_load(file)
+    # Enforce that the configuration includes a discovery_context section
+    if 'discovery_context' not in client_config:
+        raise ValueError("Configuration must include 'discovery_context' section.")
 
-    # If discovery_context exists, merge its keys into the top-level config
-    if 'discovery_context' in client_config:
-        dc = client_config['discovery_context']
-        client_config['data_sources'] = dc.get('data_sources', {})
-        client_config['it_estate'] = dc.get('it_estate', {})
-        client_config['compliance'] = dc.get('compliance', {})
-    else:
-        # Ensure top-level required configuration sections exist
-        client_config.setdefault('data_sources', {})
-        client_config.setdefault('it_estate', {})
-        client_config.setdefault('compliance', {})
-
-    # Instantiate the ClientContext (assuming it's defined elsewhere in the module)
+    # Instantiate the ClientContext and assign the full configuration
     context = ClientContext(config_path)
-    # Assign the full configuration to context.config
     context.config = client_config
-    # Also set additional attributes if needed
-    context.data_sources = client_config.get("data_sources", {})
-    context.it_estate = client_config.get("it_estate", {})
-    context.compliance = client_config.get("compliance", {})
-    
+
     # Setup directories and other required structure
     context.setup_directories()
     return context
