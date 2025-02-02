@@ -97,8 +97,11 @@ vcaio list-agents
 ```
 
 4. Review outputs in `./data/output/`:
-   - `organization-caio-*.md`: AI Strategy Document
-   - `organization-architect-*.md`: Technical Implementation Plan
+   - `organization-ai-bluprint-*.md`: AI Strategy Document
+   - `/artifacts/organization-architect-*.md`: Technical Implementation Plan
+   - `/project-plan/organization-pm-*.md`: Project Plan
+   - `/finops/organization-finance-*.md`: Financial Plan
+   - `/training/organization-trainer-*.md`: Trainings & Workshops
 
 ## Project Structure
 
