@@ -84,7 +84,7 @@ def run(context: ClientContext):
             f"1. Business goals and pain points\n"
             f"2. Compliance and security requirements\n"
             f"3. Available data sources and IT infrastructure\n"
-            f"Context: {json.dumps(discovery_input, indent=2)}"
+            f"Context: {json.dumps(discovery_input, indent=2)}", stream=True
         )
     except KeyError as ke:
         logger.error(f"Configuration error: Missing key {str(ke)}")

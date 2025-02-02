@@ -1,122 +1,136 @@
 discovery_context:
   business:
     key_stakeholders:
-    - CEO, CTO, CFO
+      - Alice Acme, CEO
+      - Bob Acme, CTO
+      - Carol Acme, CFO
     pain_points:
-    - Mo Money Mo Problems
+      - Supply chain inefficiencies
+      - Increasing operational costs
+      - Market competition
     strategic_goals:
-    - "Survive and thrive"
+      - Increase market share
+      - Improve operational efficiency
+      - Adopt sustainable practices
     success_metrics:
-    - CAGR, ROI, LTV, ROA
+      - Market Share
+      - Revenue Growth
+      - Operational Efficiency
   compliance:
-    data_privacy: ["GDPR", "HIPAA", "ITAR", "ISO/IEC 27001"]
-    requirements: ["zero-trust, multi-factor authentication"]
-    security_controls: ["RBAC", "ABAC"]
+    data_privacy:
+      - GDPR
+      - CCPA
+    requirements:
+      - robust data encryption
+      - regular compliance audits
+    security_controls:
+      - MFA
+      - Firewall
+      - IDS
   data_sources:
     external:
-      - name: "AWS S3"
-        description: "Customer data lake storage"
-        regions: ["us-east-1", "eu-west-1"]
-        data_types: ["parquet", "csv", "json"]
-        size_estimate: "50TB"
-      - name: "Azure Blob Storage"
-        description: "Legacy system backups and archives"
-        regions: ["eastus2"]
+      - name: "Google Cloud Storage"
+        description: "Global marketing data lake"
+        regions: ["us-central1", "europe-west1"]
+        data_types: ["csv", "json"]
+        size_estimate: "30TB"
+      - name: "IBM Cloud Object Storage"
+        description: "Legacy production backups"
+        regions: ["us-south"]
         data_types: ["binary", "logs"]
-        size_estimate: "20TB"
-      - name: "Supabase"
-        description: "Customer facing application database"
-        regions: ["us-west-1"]
-        data_types: ["postgresql"]
-        size_estimate: "500GB"
+        size_estimate: "15TB"
+      - name: "Oracle Autonomous Database"
+        description: "Customer transaction data"
+        regions: ["us-east-2"]
+        data_types: ["oracle"]
+        size_estimate: "750GB"
     internal:
-      - name: "Notion"
-        description: "Company documentation and knowledge base"
-        workspaces: ["Engineering", "Product", "Sales"]
-        access_level: "Team"
-      - name: "Slack"
-        description: "Internal communication and automation"
-        channels: ["#engineering", "#customer-support", "#data-science"]
-        retention_policy: "90 days"
-      - name: "Google Drive"
-        description: "Shared documents and analytics reports"
-        shared_drives: ["Executive", "Engineering", "Customer Success"]
-        size_estimate: "2TB"
+      - name: "Confluence"
+        description: "Internal documentation portal"
+        workspaces: ["Engineering", "Operations", "Finance"]
+        access_level: "Enterprise"
+      - name: "Microsoft Teams"
+        description: "Collaboration and communication tool"
+        channels: ["General", "Operations", "Support"]
+        retention_policy: "180 days"
+      - name: "Dropbox Business"
+        description: "Shared corporate files"
+        shared_drives: ["Executive", "HR", "Sales"]
+        size_estimate: "3TB"
   it_estate:
     applications:
-      - name: "Customer Portal"
+      - name: "Acme Portal"
         type: "Web Application"
-        tech_stack: ["React", "Node.js", "PostgreSQL"]
-        hosting: "AWS ECS"
+        tech_stack: ["Angular", "Spring Boot", "MySQL"]
+        hosting: "Google App Engine"
         status: "Production"
-      - name: "Mobile App"
+      - name: "Acme Mobile"
         type: "Native Mobile"
-        tech_stack: ["React Native", "Firebase"]
+        tech_stack: ["Swift", "Kotlin"]
         platforms: ["iOS", "Android"]
         status: "Beta"
-      - name: "Admin Dashboard"
+      - name: "Acme Dashboard"
         type: "Web Application"
-        tech_stack: ["Vue.js", "Python FastAPI"]
-        hosting: "Azure App Service"
+        tech_stack: ["React", "Django"]
+        hosting: "AWS Elastic Beanstalk"
         status: "Production"
     cloud_services:
+      - name: "Google Cloud"
+        services:
+          - "App Engine"
+          - "Cloud SQL"
+          - "BigQuery"
+        regions: ["us-central1", "asia-east1"]
+      - name: "IBM Cloud"
+        services:
+          - "Cloud Foundry"
+          - "Kubernetes Service"
+        regions: ["us-south"]
       - name: "AWS"
         services:
-          - "ECS"
-          - "RDS"
+          - "EC2"
+          - "S3"
           - "Lambda"
-          - "API Gateway"
-        regions: ["us-east-1", "eu-west-1"]
-      - name: "Azure"
-        services:
-          - "App Service"
-          - "Azure Functions"
-          - "CosmosDB"
-        regions: ["eastus2"]
-      - name: "GCP"
-        services:
-          - "BigQuery"
-          - "Cloud Storage"
-        regions: ["us-central1"]
+        regions: ["us-east-2"]
     databases:
-      - name: "Customer Data"
-        type: "PostgreSQL"
-        version: "14.5"
-        hosting: "AWS RDS"
-        size: "2TB"
-        backup_strategy: "Daily snapshots"
-      - name: "Analytics"
+      - name: "Transaction Data"
+        type: "MySQL"
+        version: "8.0"
+        hosting: "Google Cloud SQL"
+        size: "1TB"
+        backup_strategy: "Hourly backups"
+      - name: "Analytics DB"
         type: "BigQuery"
-        datasets: ["user_events", "metrics", "reports"]
-        size: "10TB"
-      - name: "Cache Layer"
+        datasets: ["sales_data", "customer_engagement", "inventory"]
+        size: "20TB"
+      - name: "Session Cache"
         type: "Redis"
-        version: "6.2"
+        version: "7.0"
         hosting: "AWS ElastiCache"
-        purpose: "Session management and API caching"
+        purpose: "User session caching"
     integration_points:
-      - name: "Payment Gateway"
+      - name: "Payment Processor"
         type: "REST API"
-        provider: "Stripe"
-        endpoints: ["charges", "subscriptions", "refunds"]
-      - name: "Email Service"
+        provider: "PayPal"
+        endpoints: ["payments", "refunds", "subscriptions"]
+      - name: "Notification Service"
         type: "SMTP/API"
-        provider: "SendGrid"
-        volume: "100k emails/month"
-      - name: "Authentication"
+        provider: "Mailgun"
+        volume: "200k emails/month"
+      - name: "User Authentication"
         type: "OAuth2/OIDC"
-        provider: "Auth0"
-        integrations: ["Google", "Microsoft", "GitHub"]
+        provider: "Okta"
+        integrations: ["Google", "Microsoft", "LinkedIn"]
 documents:
   input_directory: ./data/input
   output_directory: ./data/output
   supported_formats:
-  - .pdf
-  - .docx
-  - .txt
-  - .md
+    - .pdf
+    - .docx
+    - .txt
+    - .md
 organization:
-  industry: IT
-  location: Frisco
-  name: WhitegloveAI
-  size: Small
+  industry: "Manufacturing"
+  location: "Los Angeles"
+  name: "Acme Corp"
+  size: "Large"
