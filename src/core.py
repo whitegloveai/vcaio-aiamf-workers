@@ -67,6 +67,7 @@ def run(context: ClientContext):
             f"1. Business goals and pain points\n"
             f"2. Compliance and security requirements\n"
             f"3. Available data sources and IT infrastructure\n"
+            f"4. Start with caio, then transfer to architect, then transfer to trainer, then transfer to pm, then transfer to finops"
             f"Context: {json.dumps(discovery_input, indent=2)}"
         )
     except KeyError as ke:
