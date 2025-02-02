@@ -11,11 +11,17 @@ graph TD
     subgraph Agents
         CAIO[Chief AI Officer]
         ARCH[AI Solution Architect]
+        PM[Project Manager]
+        TM[Trainer Manager]
+        FINOPS[FinOps]
     end
 
     subgraph Tools
         FT[File Tools]
         DC[Data Collection]
+        WS[Web Search]
+        RD[Arxiv Tools]
+        CG[Calculator Tools]
     end
 
     subgraph Data
@@ -32,6 +38,10 @@ graph TD
     FT -->|Manages| IN
     FT -->|Manages| OUT
     FT -->|Reads| CFG
+    PM -->|Develops| OUT
+    TM -->|Trains| OUT
+    FINOPS -->|Reads| OUT
+    FINOPS -->|Generates| OUT
 ```
 
 ## Setup
@@ -98,6 +108,9 @@ vcaio list-agents
 │   ├── agents/         # AI agent definitions
 │   │   ├── caio.py     # Chief AI Officer agent
 │   │   └── architect.py # Solution Architect agent
+│   │   └── pm.py       # Project Manager agent
+│   │   └── trainer.py  # Trainer agent
+│   │   └── finops.py   # FinOps agent
 │   ├── client/         # Client context and data management
 │   ├── config/         # Configuration files
 │   │   └── client.yaml # Client configuration template
