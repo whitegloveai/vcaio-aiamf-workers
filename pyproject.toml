@@ -1,6 +1,6 @@
 [project]
 name = "vcaio-agno"
-version = "0.0.1"
+version = "0.0.2"
 description = "Virtual Chief AI Officer - An AI-powered solution architect and strategy consultant"
 authors = [
     {name = "Tobalo Torres-Valderas", email = "tobalo@whitegloveai.com"},
@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://whitegloveai.com"
+Homepage = "https://aiamf.ai"
 
 [build-system]
 requires = ["hatchling"]
