@@ -8,7 +8,7 @@ from .client.context import ClientContext
 def cli():
     """Virtual Chief AI Officer (vCAIO) Command Line Interface
     
-    Manage AI strategy development and technical implementation plans.
+    Manage AI strategy development, technical implementation plans, organizational context, financial planning, employee enablement, and project planning.
     """
     pass
 
@@ -50,6 +50,12 @@ def list_agents():
     click.echo("  - Strategic discovery and AI roadmap development")
     click.echo("\n• AI Solution Architect")
     click.echo("  - Technical design and implementation planning")
+    click.echo("\n• Project Manager")
+    click.echo("  - Project plans and materials development")
+    click.echo("\n• Trainer")
+    click.echo("  - Provide trainings and workshops for clients line of business and departments based on tailored AI strategy")
+    click.echo("\n• FinOps")
+    click.echo("  - Financial operations, cloud economics strategy, budget, software bill of materials, and compliance monitoring")
 
 if __name__ == "__main__":
     cli()
