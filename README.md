@@ -2,7 +2,7 @@
 
 An AI-powered solution architect and strategy consultant that helps organizations develop their AI transformation roadmap.
 
-**TODO: instructor / trainer agent, engineer agent, analyst agent, project manager agent**
+**TODO: research agent**
 
 ## Architecture
 
@@ -43,6 +43,11 @@ graph TD
     FINOPS -->|Reads| OUT
     FINOPS -->|Generates| OUT
 ```
+## Prerequisites
+- OpenAI API key[https://platform.openai.com/api-keys]
+- Git [https://git-scm.com/]
+- Python 3 [https://www.python.org/downloads/]
+- uv [https://docs.astral.sh/uv/getting-started/installation/]
 
 ## Setup
 **Clone Repo**:
